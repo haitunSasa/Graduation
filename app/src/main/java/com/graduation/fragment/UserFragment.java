@@ -1,6 +1,8 @@
 package com.graduation.fragment;
 
 
+import android.view.View;
+
 import com.graduation.R;
 
 public class UserFragment extends BaseFragment {
@@ -12,7 +14,7 @@ public class UserFragment extends BaseFragment {
     }
 
     @Override
-    protected void initView() {
+    protected void initView(View view) {
 
     }
 }

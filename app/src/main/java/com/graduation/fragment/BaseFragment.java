@@ -23,13 +23,13 @@ public abstract  class BaseFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         if (rootView == null)
             rootView = inflater.inflate(getLayoutResource(), container, false);
-        initView();
+        initView(rootView);
         return rootView;
     }
     //获取布局文件
     protected abstract int getLayoutResource();
     //初始化view
-    protected abstract void initView();
+    protected abstract void initView(View view);
 
 
     /**

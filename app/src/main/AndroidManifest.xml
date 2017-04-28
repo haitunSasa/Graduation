@@ -26,7 +26,9 @@
         <activity
             android:name=".activity.MainActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".activity.QuestionActivity"></activity>
+        <activity android:name=".activity.QuestionActivity"
+            android:screenOrientation="portrait"
+            android:label="@string/ask_question"/>
     </application>
 
 </manifest>

@@ -1,9 +1,11 @@
 package com.graduation.activity;
 
 import android.app.ProgressDialog;
+import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.design.widget.TextInputLayout;
+import android.support.v7.widget.Toolbar;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.MotionEvent;
@@ -32,7 +34,14 @@ public class RegisterActivity extends BaseActivityWithEditText{
     }
 
     @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+    }
+
+    @Override
     public void initView() {
+
         cellphoneWrapper = (TextInputLayout) findViewById(R.id.cellphoneWrapper);
         passwordWrapper = (TextInputLayout) findViewById(R.id.nicknameWrapper);
         confirmPasswordWrapper = (TextInputLayout) findViewById(R.id.passwordWrapper);
@@ -50,7 +59,13 @@ public class RegisterActivity extends BaseActivityWithEditText{
         edit_cellphone.setOnTouchListener(touchlistener);
         edit_password.setOnTouchListener(touchlistener);
         edit_confirm_password.setOnTouchListener(touchlistener);
-
+        Toolbar toolbar=(Toolbar)findViewById(R.id.toolbar);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
         registerHandler = new register_handler(this);
     }
 
@@ -144,10 +159,6 @@ public class RegisterActivity extends BaseActivityWithEditText{
             return false;
         }
     };
-
-    public void back(View v) {
-        finish();
-    }
 
     @Override
     protected void onDestroy() {

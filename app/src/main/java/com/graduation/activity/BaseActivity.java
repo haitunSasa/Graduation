@@ -5,6 +5,7 @@ import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.View;
 
 import com.graduation.R;
 import com.graduation.rx.RxManager;
@@ -29,6 +30,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         setContentView(getLayoutId());
         Toolbar toolbar=(Toolbar)findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
         mContext=this;
         this.initView();
     }
@@ -37,6 +39,9 @@ public abstract class BaseActivity extends AppCompatActivity {
         super.onDestroy();
         mRxManager.clear();
         AppManager.getAppManager().finishActivity(this);
+    }
+    public void back(View v) {
+        finish();
     }
 
     /*************子类需要实现的方法*********************/

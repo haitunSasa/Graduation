@@ -19,17 +19,27 @@
             android:background="@color/colorPrimary"
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-            app:title="@string/action_settings"/>
-        <EditText
+            app:title="@string/quick_ask"/>
+        <TextView
+            android:id="@+id/tv_ask"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/toolbar"/>
+            android:layout_below="@id/toolbar"
+            android:drawableStart="@drawable/android_vs_ios"
+            android:drawablePadding="@dimen/activity_horizontal_margin"
+            android:padding="@dimen/activity_horizontal_margin"
+            android:text="身体小毛病快速问专家\n专业及时解答"
+            android:textColor="@color/colorPrimary"
+            android:lineSpacingExtra="@dimen/activity_horizontal_margin"
+            android:drawableEnd="@drawable/android_vs_ios"/>
+
+
 
         <com.graduation.ui.recycler.IRecyclerView
             android:id="@+id/irc"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_below="@id/toolbar"
+            android:layout_below="@id/tv_ask"
             app:loadMoreEnabled="true"
             app:refreshEnabled="true"
             app:refreshHeaderLayout="@layout/layout_irecyclerview_refresh_header" />

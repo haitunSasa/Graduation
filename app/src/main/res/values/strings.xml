@@ -1,51 +1,5 @@
 <resources>
     <string name="app_name">健康知识</string>
-    <string name="icon_setting">设置</string>
-    <string name="icon_knowledge">帮助</string>
-    <string name="icon_personage">我</string>
-    <string name="user_name">用户名</string>
-    <string name="user_setting">个人设置</string>
-    <string name="device_manage">设备管理</string>
-    <string name="version">检测更新</string>
-    <string name="user_exit">退出登录</string>
-    <string name="enhance">理疗预约</string>
-    <string name="constant">加热预约</string>
-    <string name="common">远程控制</string>
-
-
-    <!--  title  -->
-    <string name="mm_device_title">妈妈的床</string>
-    <string name="device_title">主卧室床</string>
-    <string name="left_side">左侧</string>
-    <string name="right_side">右侧</string>
-    <string name="target_tmp">目标温度：</string>
-    <string name="current_mode">当前状态：</string>
-
-    <!--  common  -->
-    <string name="heating">加热</string>
-    <string name="therapy">理疗</string>
-    <string name="tmp">温度</string>
-    <string name="time">时间</string>
-
-    <!--constant-->
-    <string name="constant_heating_tmp">加热温度</string>
-    <string name="protect_time">安全保护时间</string>
-    <string name="open_time">预约开机时间</string>
-    <string name="tmp_control">智能温度曲线</string>
-
-    <!--   Enhance   -->
-    <string name="enhance_info">在预约时段内床垫会时刻待命，若您躺在床上，加强理疗会自动开始</string>
-    <string name="enhance_order_time">允许理疗时间段</string>
-    <string name="enhance_time">理疗时长</string>
-
-    <!--info-->
-    <string name="heating_info">请选择您希望加热的温度</string>
-    <string name="protect_time_info">超过此时间系统不再加热</string>
-    <string name="smart_tmp_control">可以智能控温</string>
-    <string name="open_time_info">床垫在此时间点自动加热</string>
-    <string name="therapy_time_info">床垫在此时间点自动加热</string>
-    <string name="therapy_allow_time_info">在此时间段内，若您在床垫上，床垫则会自动开启理疗模式</string>
-
 
     <!-- 下拉刷新中相关文字 -->
     <string name="pull_to_refresh_header_time">最近更新：</string>
@@ -112,10 +66,6 @@
     <string name="settings_tv_title">设置</string>
     <string name="dialog_tv_title">正在更新\u2026</string>
     <string name="dialog_btn_cancel">取消下载</string>
-    <!--设备号-->
-    <string name="device_1">1067017059</string>
-    <string name="device_2">1066742019</string>
-    <string name="device_3">MockHardware_V2_2</string>
 
 
     <string name="user_info">你的信息</string>
@@ -128,7 +78,9 @@
     <string name="sex">性别</string>
     <string name="birthday">出生日期</string>
 
-    <string name="action_settings">快问</string>
+    <string name="action_settings">提问</string>
+    <string name="ask_question">提问</string>
+    <string name="quick_ask">快问</string>
     <string name="question_hint">想问天问大地，或者是迷信问问宿命</string>
     <string name="picker_title">%1$s  :  %2$s</string>
 

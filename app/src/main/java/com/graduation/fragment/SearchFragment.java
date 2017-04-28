@@ -20,7 +20,8 @@ public class SearchFragment extends BaseFragment {
     }
 
     @Override
-    public void initView() {
+    protected void initView(View view) {
 
     }
+
 }
