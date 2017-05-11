@@ -13,17 +13,21 @@ import android.content.res.Resources;
 public class GraduationApplication extends Application{
     private static GraduationApplication baseApplication;
 
-/*    @Override
+    @Override
     public void onCreate() {
         super.onCreate();
         baseApplication = this;
-    }*/
+    }
 
     public static Context getAppContext() {
         return baseApplication;
     }
     public static Resources getAppResources() {
         return baseApplication.getResources();
+    }
+    @Override
+    public void onTerminate() {
+        super.onTerminate();
     }
 
 

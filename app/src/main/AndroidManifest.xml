@@ -2,13 +2,20 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.graduation">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+
     <application
+        android:name=".GraduationApplication"
         android:allowBackup="true"
         android:icon="@drawable/solo"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.SplashActivity">
+        <activity android:name=".ui.activity.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -16,19 +23,23 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activity.RegisterActivity"
+            android:name=".ui.register.RegisterActivity"
             android:label="@string/register_tv_title"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".activity.LoginActivity"
+            android:name=".ui.login.LoginActivity"
             android:label="@string/userlogin"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".activity.MainActivity"
+            android:name=".ui.activity.MainActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".activity.QuestionActivity"
-            android:screenOrientation="portrait"
-            android:label="@string/ask_question"/>
+        <activity
+            android:name=".ui.question.ask_question.QuestionActivity"
+            android:label="@string/ask_question"
+            android:screenOrientation="portrait" />
+        <activity android:name=".ui.question.question_detail.QuestionDetailActivity"
+            android:label="@string/question_detail"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

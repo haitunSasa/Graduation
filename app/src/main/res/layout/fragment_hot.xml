@@ -1,12 +1,41 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.graduation.fragment.HomeFragment">
+    android:clipToPadding="true">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <include layout="@layout/floating_button"/>
+
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-
-</FrameLayout>
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimary"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            app:title="首页"/>
+        <com.graduation.ui.recycler.IRecyclerView
+            android:id="@+id/irc"
+            android:layout_below="@+id/toolbar"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            app:loadMoreEnabled="true"
+            app:refreshHeaderLayout="@layout/layout_irecyclerview_refresh_header"
+            app:refreshEnabled="true"
+            />
+        <com.graduation.ui.LoadingTip
+            android:id="@+id/loadedTip"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/toolbar"
+            android:layout_gravity="center"
+            android:gravity="center" />
+    </RelativeLayout>
+</android.support.design.widget.CoordinatorLayout>
