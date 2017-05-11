@@ -1,7 +1,11 @@
 package com.graduation.ui.answer;
 
+import com.graduation.api.Api;
+import com.graduation.api.HostType;
 import com.graduation.bean.BaseResponse;
+import com.graduation.rx.RxSchedulers;
 
+import okhttp3.RequestBody;
 import rx.Observable;
 
 /**
@@ -11,6 +15,9 @@ import rx.Observable;
 public class AnswerModel implements AnswerContact.Model {
     @Override
     public Observable<BaseResponse> answerQuestion(String answer) {
-        return null;
+        RequestBody body = RequestBody.create(okhttp3.MediaType.parse("application/json;charset=UTF-8"),answer);
+        return Api.getDefault(HostType.URL_TEST).answerQuestion(body)
+                //声明线程调度
+                .compose(RxSchedulers.<BaseResponse>io_main());
     }
 }

@@ -15,10 +15,10 @@ import com.graduation.base.BaseActivity;
 import com.graduation.bean.AnswerUser;
 import com.graduation.bean.BaseResponse;
 import com.graduation.bean.QuestionUser;
-import com.graduation.bean.Users;
 import com.graduation.bean.UsersInfo;
 import com.graduation.ui.adapter.AnswerAdapter;
 import com.graduation.ui.adapter.IRecyclerListener;
+import com.graduation.ui.answer.AnswerActivity;
 import com.graduation.ui.recycler.IRecyclerView;
 import com.graduation.ui.recycler.LoadMoreFooterView;
 import com.graduation.ui.recycler.OnRefreshListener;
@@ -96,6 +96,7 @@ public class QuestionDetailActivity extends BaseActivity<QuestionDetailPresenter
                 @Override
                 public void onClick(View view) {
                     // TODO: 2017/5/11 回答问题
+                    AnswerActivity.starAction(mContext,questionUser);
                 }
             });
         }
