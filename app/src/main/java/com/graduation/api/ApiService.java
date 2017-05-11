@@ -32,6 +32,10 @@ public interface ApiService {
     @Headers({"Content-type:application/json;charset=UTF-8"})
     Observable<BaseResponse<UsersInfo>> login(@Body RequestBody body);
 
+    @POST(ApiConstants.USER_REGISTER)
+    @Headers({"Content-type:application/json;charset=UTF-8"})
+    Observable<BaseResponse<UsersInfo>> register(@Body RequestBody body);
+
     @POST(ApiConstants.ASK_QUESTION)
     @Headers({"Content-type:application/json;charset=UTF-8"})
     Observable<Void> askQuestion(@Body RequestBody body);
@@ -39,6 +43,10 @@ public interface ApiService {
     @GET(ApiConstants.GET_LAST_QUESTION)
     Observable<BaseResponse<List<QuestionUser>>> getLastQuestion();
 
-    @GET(ApiConstants.GET_ANSWER/*+"?userId={userId}&questionId={questionId}"*/)
+    @GET(ApiConstants.GET_ANSWER)
     Observable<BaseResponse<List<AnswerUser>>> getAnswer(@Query("userId") int userId, @Query("questionId")int questionId);
+
+    @POST(ApiConstants.ANSWER_QUESTION)
+    @Headers({"Content-type:application/json;charset=UTF-8"})
+    Observable<BaseResponse> answerQuestion(@Body RequestBody body);
 }

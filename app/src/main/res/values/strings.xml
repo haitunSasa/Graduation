@@ -81,6 +81,7 @@
     <string name="action_settings">10元提问</string>
     <string name="ask_question">提问</string>
     <string name="question_detail">问题详情</string>
+    <string name="answer_question">回答问题</string>
     <string name="quick_ask">快问</string>
     <string name="question_hint">想问天问大地，或者是迷信问问宿命</string>
     <string name="picker_title">%1$s  :  %2$s</string>

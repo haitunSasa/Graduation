@@ -13,8 +13,15 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.alibaba.fastjson.JSON;
 import com.graduation.R;
 import com.graduation.base.BaseActivity;
+import com.graduation.bean.BaseResponse;
+import com.graduation.bean.ErrCode;
+import com.graduation.bean.Users;
+import com.graduation.bean.UsersInfo;
+import com.graduation.ui.activity.MainActivity;
+import com.graduation.utils.SharedPreUtil;
 
 import java.lang.ref.WeakReference;
 
@@ -22,7 +29,7 @@ import java.lang.ref.WeakReference;
  * Created by liyan on 2017/4/20.
  */
 
-public class RegisterActivity extends BaseActivity {
+public class RegisterActivity extends BaseActivity<RegisterPresenter,RegisterModel> implements RegisterContact.View{
     private ProgressDialog mDialog;
     private String cellphone, password, confirmPassword;
     private EditText edit_cellphone, edit_password, edit_confirm_password;
@@ -72,7 +79,7 @@ public class RegisterActivity extends BaseActivity {
 
     @Override
     public void initPresenter() {
-
+        mPresenter.setVM(this,mModel);
     }
 
 
@@ -204,12 +211,39 @@ public class RegisterActivity extends BaseActivity {
             confirmPasswordWrapper.setErrorEnabled(true);
             confirmPasswordWrapper.setError("两次密码不一致");
         }else {
-            getData();
+            Users user =new Users();
+            user.setUserAccount(cellphone);
+            user.setUserPassword(password);
+            String u= JSON.toJSONString(user);
+            mPresenter.register(u);
         }
     }
 
 
-    private void getData() {
+
+    @Override
+    public void skip(BaseResponse<UsersInfo> response) {
+        if(response.flag==1){
+            UsersInfo usersInfo=response.data;
+            SharedPreUtil.getInstance().putUser(usersInfo);
+            MainActivity.startAction(this);
+        }else {
+            Toast.makeText(this, ErrCode.printErrCause(response.errCode), Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    @Override
+    public void showLoading(String title) {
+
+    }
+
+    @Override
+    public void stopLoading() {
+
+    }
+
+    @Override
+    public void showErrorTip(String msg) {
 
     }
 

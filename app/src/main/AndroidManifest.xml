@@ -37,8 +37,13 @@
             android:name=".ui.question.ask_question.QuestionActivity"
             android:label="@string/ask_question"
             android:screenOrientation="portrait" />
-        <activity android:name=".ui.question.question_detail.QuestionDetailActivity"
+        <activity
+            android:name=".ui.question.question_detail.QuestionDetailActivity"
             android:label="@string/question_detail"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.answer.AnswerActivity"
+            android:label="@string/answer_question"
             android:screenOrientation="portrait"/>
     </application>
 
