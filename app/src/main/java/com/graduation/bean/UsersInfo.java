@@ -1,7 +1,7 @@
 package com.graduation.bean;
 
 import java.io.Serializable;
-import java.sql.Date;
+
 import java.sql.Timestamp;
 
 /**
@@ -13,9 +13,9 @@ public class UsersInfo implements Serializable{
     private Integer userId;
     private String userAccount;
     private Short userSex;
-    private Date userbirthday;
+    private String userbirthday;
     private String userIntroduction;
-    private Timestamp userRegisterTime;
+    private String userRegisterTime;
     private String userImg;
     private String token;
     private Double userReward;
@@ -54,11 +54,11 @@ public class UsersInfo implements Serializable{
         this.userSex = userSex;
     }
 
-    public Date getUserbirthday() {
+    public String getUserbirthday() {
         return userbirthday;
     }
 
-    public void setUserbirthday(Date userbirthday) {
+    public void setUserbirthday(String userbirthday) {
         this.userbirthday = userbirthday;
     }
 
@@ -70,11 +70,11 @@ public class UsersInfo implements Serializable{
         this.userIntroduction = userIntroduction;
     }
 
-    public Timestamp getUserRegisterTime() {
+    public String getUserRegisterTime() {
         return userRegisterTime;
     }
 
-    public void setUserRegisterTime(Timestamp userRegisterTime) {
+    public void setUserRegisterTime(String userRegisterTime) {
         this.userRegisterTime = userRegisterTime;
     }
 

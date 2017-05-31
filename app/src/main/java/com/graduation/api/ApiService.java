@@ -1,7 +1,9 @@
 package com.graduation.api;
 
+import com.graduation.bean.Answer;
 import com.graduation.bean.AnswerUser;
 import com.graduation.bean.BaseResponse;
+import com.graduation.bean.EavesdropperAnswer;
 import com.graduation.bean.Question;
 import com.graduation.bean.QuestionUser;
 import com.graduation.bean.Users;
@@ -49,4 +51,18 @@ public interface ApiService {
     @POST(ApiConstants.ANSWER_QUESTION)
     @Headers({"Content-type:application/json;charset=UTF-8"})
     Observable<BaseResponse> answerQuestion(@Body RequestBody body);
+
+    @GET(ApiConstants.GET_BY_USER_NAME)
+    Observable<BaseResponse<List<UsersInfo>>> search(@Query("key") String key);
+
+    @GET(ApiConstants.GET_USER_INFO)
+    Observable<BaseResponse<UsersInfo>> getUserInfo(@Query("userId") int userId,@Query("token") String token);
+
+    @POST(ApiConstants.CHANGE_INFO)
+    @Headers({"Content-type:application/json;charset=UTF-8"})
+    Observable<BaseResponse<UsersInfo>> changeInfo(@Body RequestBody body);
+
+    @POST(ApiConstants.EAVESDROPPER)
+    @Headers({"Content-type:application/json;charset=UTF-8"})
+    Observable<BaseResponse<AnswerUser>> eavesdropper(@Body RequestBody body);
 }

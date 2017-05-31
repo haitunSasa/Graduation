@@ -10,6 +10,8 @@ import android.widget.TextView;
 
 import com.graduation.R;
 import com.graduation.bean.AnswerUser;
+import com.graduation.ui.adapter.listener.AnswerListener;
+import com.graduation.ui.adapter.listener.IRecyclerListener;
 import com.graduation.ui.recycler.BaseRecyclerViewAdapter;
 
 /**
@@ -17,8 +19,8 @@ import com.graduation.ui.recycler.BaseRecyclerViewAdapter;
  */
 
 public class AnswerAdapter extends BaseRecyclerViewAdapter<AnswerUser, AnswerViewHolder> {
-    IRecyclerListener listener;
-    public AnswerAdapter(Context context, IRecyclerListener listener) {
+    AnswerListener listener;
+    public AnswerAdapter(Context context, AnswerListener listener) {
         super(context);
         this.listener=listener;
     }
@@ -47,11 +49,10 @@ public class AnswerAdapter extends BaseRecyclerViewAdapter<AnswerUser, AnswerVie
             holder.tv_question.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    listener.onClickListener(pos);
+                    listener.eavesdropper(pos);
                 }
             });
         }
-
     }
 }
 

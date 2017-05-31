@@ -4,14 +4,13 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    app:cardElevation="2dp"    >
+    app:cardElevation="1dp"
+    app:cardCornerRadius="@dimen/item_margin">
     <RelativeLayout
         android:id="@+id/rl_root"
-        xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-
+        android:layout_height="wrap_content"
+        android:background="@color/white">
         <ImageView
             android:id="@+id/iv_answer_img"
             android:layout_width="28dp"
@@ -49,7 +48,8 @@
             android:maxLines="3"
             android:ellipsize="end"
             android:layout_below="@id/iv_answer_img"
-            android:layout_alignStart="@id/iv_answer_img"/>
+            android:layout_alignStart="@id/iv_answer_img"
+            android:layout_marginBottom="@dimen/fab_margin"/>
 
     </RelativeLayout>
 

@@ -16,7 +16,7 @@ public class AnswerUser {
     private String userName;
     private Integer role;
 
-    private boolean isCouldListen;
+    private boolean couldListen;
 
     public int getAnswerId() {
         return answerId;
@@ -83,10 +83,10 @@ public class AnswerUser {
     }
 
     public boolean isCouldListen() {
-        return isCouldListen;
+        return couldListen;
     }
 
     public void setCouldListen(boolean couldListen) {
-        isCouldListen = couldListen;
+        this.couldListen = couldListen;
     }
 }

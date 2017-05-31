@@ -31,6 +31,7 @@ public class ApiConstants {
     public static final String GET_ANSWER="answer_getAnswer";
 
     //http://localhost:8333/BHGD/question_getQuestionDetail?questionId=14
+    //获取问题详情
     public static final String GET_QUESTION_DETAIL="question_getQuestionDetail";
 
     //提问
@@ -49,22 +50,15 @@ public class ApiConstants {
     // http://localhost:8333/BHGD/user_applyAuthenticate?userId=3&typeId=1
     public static final String USER_APPLY_AUTHENTICATE="user_applyAuthenticate";
 
+    //获取用户信息
+    public static final String GET_USER_INFO="user_getUserInfo";
 
+    //修改用户信息
+    public static final String CHANGE_INFO="user_changeInfo";
 
-    public static final String NETEAST_HOST = "http://c.m.163.com/";
-    // 头条TYPE
-    public static final String HEADLINE_TYPE = "headline";
-    // 房产TYPE
-    public static final String HOUSE_TYPE = "house";
-    // 其他TYPE
-    public static final String OTHER_TYPE = "list";
+    //偷听
+    public static final String EAVESDROPPER="eavesdropper_eavesdropper";
 
-
-    /**
-     * 新浪图片新闻
-     * http://gank.io/api/data/福利/{size}/{page}
-     */
-    public static final String SINA_PHOTO_HOST = "http://gank.io/api/";
 
 
 
@@ -81,7 +75,8 @@ public class ApiConstants {
                 host = URL;
                 break;
             case HostType.URL:
-                host = SINA_PHOTO_HOST;
+                // TODO: 2017/5/12 部署到云上之后的URL
+                host = "";
                 break;
             default:
                 host = "";

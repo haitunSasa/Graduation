@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.graduation.R;
 import com.graduation.bean.QuestionUser;
+import com.graduation.ui.adapter.listener.IRecyclerListener;
 import com.graduation.ui.recycler.BaseRecyclerViewAdapter;
 
 /**
@@ -60,25 +61,7 @@ class ViewHolder extends RecyclerView.ViewHolder{
         tv_user_name = (TextView) view.findViewById(R.id.tv_name);
         tv_reward = (TextView) view.findViewById(R.id.tv_reward);
         tv_question = (TextView) view.findViewById(R.id.tv_question);
-
     }
-/*
-    public    ViewHolder(View rootView, MyItemClickListener listener, MyItemLongClickListener longClickListener){
-        super(rootView);
-        iv = (ImageView) rootView.findViewById(R.id.item_iv);
-        tv=(TextView) rootView.findViewById(R.id.item_tv);
-        this.mListener=listener;
-        this.mLongClickListener=longClickListener;
-        rootView.setOnClickListener(this);
-        rootView.setOnLongClickListener(this);
-        }
-
-    @Override
-    public void onClick(View view) {
-        if(mListener!=null){
-            mListener.onItemClick(view,getAdapterPosition());
-        }
-    }*/
 
 }
 

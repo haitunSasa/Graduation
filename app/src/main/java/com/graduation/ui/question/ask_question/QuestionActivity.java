@@ -11,7 +11,7 @@ import com.alibaba.fastjson.JSON;
 import com.graduation.R;
 import com.graduation.base.BaseActivity;
 import com.graduation.bean.Question;
-import com.graduation.ui.activity.MainActivity;
+import com.graduation.ui.main.MainActivity;
 import com.graduation.utils.SharedPreUtil;
 
 public class QuestionActivity extends BaseActivity<QuestionPresenter, QuestionModel> implements QuestionContact.View {

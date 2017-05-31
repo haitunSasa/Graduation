@@ -7,9 +7,8 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 
-import com.graduation.ui.home.HomeContact;
-import com.graduation.ui.login.LoginModel;
-import com.graduation.ui.login.LoginPresenter;
+import com.graduation.ui.main.login.LoginModel;
+import com.graduation.ui.main.login.LoginPresenter;
 
 /**
  * Created by an on 2016/12/14.

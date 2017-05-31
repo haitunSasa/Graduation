@@ -28,8 +28,7 @@
             android:layout_width="match_parent"
             app:loadMoreEnabled="true"
             app:refreshHeaderLayout="@layout/layout_irecyclerview_refresh_header"
-            app:refreshEnabled="true"
-            />
+            app:refreshEnabled="true"/>
         <com.graduation.ui.LoadingTip
             android:id="@+id/loadedTip"
             android:layout_width="match_parent"
