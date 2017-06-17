@@ -132,8 +132,8 @@ public class QuestionDetailActivity extends BaseActivity<QuestionDetailPresenter
         tv_question.setText(questionContent);
         tv_reward.setText("￥"+reward);
         /*if(questionIsAnswer==1){*/
-            getAnswer();
-
+        getAnswer();
+        mPresenter.getUserAction(usersInfo.getUserId(),questionUser.getQuestionId());
     }
 
     private void getAnswer() {

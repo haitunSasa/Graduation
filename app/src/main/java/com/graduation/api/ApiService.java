@@ -65,4 +65,7 @@ public interface ApiService {
     @POST(ApiConstants.EAVESDROPPER)
     @Headers({"Content-type:application/json;charset=UTF-8"})
     Observable<BaseResponse<AnswerUser>> eavesdropper(@Body RequestBody body);
+
+    @GET(ApiConstants.GET_USER_ACTION)
+    Observable<BaseResponse> getUserAction(@Query("userId") int userId,@Query("questionId") int questionId);
 }

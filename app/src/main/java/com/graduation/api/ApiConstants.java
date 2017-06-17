@@ -59,6 +59,8 @@ public class ApiConstants {
     //偷听
     public static final String EAVESDROPPER="eavesdropper_eavesdropper";
 
+    public static final String GET_USER_ACTION="user_getUserAction";
+
 
 
 

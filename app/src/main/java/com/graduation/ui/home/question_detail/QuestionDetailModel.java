@@ -29,6 +29,13 @@ public class QuestionDetailModel implements QuestionDetailContact.Model {
     }
 
     @Override
+    public Observable<BaseResponse> getUserAction(int userId, int questionId) {
+        return Api.getDefault(HostType.URL_TEST).getUserAction(userId, questionId)
+                //声明线程调度
+                .compose(RxSchedulers.<BaseResponse>io_main());
+    }
+
+    @Override
     public Observable<BaseResponse<AnswerUser>> eavesdropper(String e) {
         RequestBody body= RequestBody.create(okhttp3.MediaType.parse("application/json;charset=UTF-8"),e);
 

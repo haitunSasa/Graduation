@@ -38,6 +38,22 @@ public class QuestionDetailPresenter extends QuestionDetailContact.Presenter{
     }
 
     @Override
+    public BaseResponse getUserAction(int userId, int questionId) {
+        mRxManage.add(mModel.getUserAction(userId, questionId).subscribe(new RxSubscriber<BaseResponse>(mContext,false) {
+            @Override
+            protected void _onNext(BaseResponse response) {
+
+            }
+
+            @Override
+            protected void _onError(String message) {
+
+            }
+        }));
+        return null;
+    }
+
+    @Override
     public BaseResponse<AnswerUser> eavesdropper(String e) {
         mRxManage.add(mModel.eavesdropper(e).subscribe(new RxSubscriber<BaseResponse<AnswerUser>>(mContext) {
             @Override

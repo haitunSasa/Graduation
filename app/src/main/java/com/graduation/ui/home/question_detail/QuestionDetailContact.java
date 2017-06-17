@@ -19,6 +19,7 @@ import rx.Observable;
 public interface QuestionDetailContact {
     interface Model extends BaseModel{
         Observable<BaseResponse<List<AnswerUser>>> getAnswer(int userId,int questionId);
+        Observable<BaseResponse> getUserAction(int userId,int questionId);
         Observable<BaseResponse<AnswerUser>> eavesdropper(String e);
     }
     interface IView extends BaseView{
@@ -27,6 +28,7 @@ public interface QuestionDetailContact {
     }
     abstract class Presenter extends BasePresenter<IView,Model> {
         public abstract BaseResponse<List<AnswerUser>> getAnswer(int userId,int questionId);
+        public abstract BaseResponse getUserAction(int userId,int questionId);
         public abstract BaseResponse<AnswerUser> eavesdropper(String e);
     }
 }
